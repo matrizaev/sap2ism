@@ -1,0 +1,18 @@
+<!DOCTYPE document_list [
+	<!ELEMENT document_list (document+)>
+	<!ELEMENT document (type, number, author, department, date, description, validity?, file_list)>
+	<!ELEMENT type (#PCDATA) >
+	<!ELEMENT number (#PCDATA) >
+	<!ELEMENT author (#PCDATA) >
+	<!ELEMENT department (#PCDATA) >
+	<!ELEMENT date (#PCDATA) >
+	<!ELEMENT description (#PCDATA) >
+	<!ELEMENT validity (cancel | change)+ >
+	<!ELEMENT cancel (#PCDATA) >
+	<!ELEMENT change (#PCDATA) >
+	<!ELEMENT file_list (file+) >
+	<!ELEMENT file (file_description, file_name) >	
+	<!ELEMENT file_name (#PCDATA) >
+	<!ELEMENT file_description (#PCDATA) >
+	<!ATTLIST document id CDATA #REQUIRED >
+]>
