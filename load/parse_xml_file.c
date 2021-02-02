@@ -198,11 +198,8 @@ TQueryList *ParseXmlFile(MYSQL *mysqlHandle, const char *xmlFile)
 			else if (!xmlStrcmp(docChld->name, BAD_CAST "description"))
 			{
 				if (docChld->xmlChildrenNode != NULL)
-				{
 					description = CleanEscapeXmlContent(mysqlHandle, docChld->xmlChildrenNode);
-					check(description != NULL, "Error while escaping description. %s", id);
-				}
-				else
+				if (description == NULL)
 				{
 					description = calloc(2, 1);
 					check_mem(description);
