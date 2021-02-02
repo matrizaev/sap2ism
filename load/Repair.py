@@ -9,6 +9,7 @@ print(sys.argv[1])
 with open(sys.argv[1], 'r', encoding='utf-8') as f:
 	data = f.read()
 	data = re.sub('\r|\n', '', data)
+	data = re.sub(r'<description>(.*?)</description>', r'<description><![CDATA[\1]]></description>', data)
 	data = re.sub(r'<(change|cancel)>\d{4}</(change|cancel)>', '', data)
 	data = re.sub(r'<validity></validity>', '', data)
 	data = re.sub(r'<file_description></file_description>', r'<file_description>Файл</file_description>', data)

@@ -23,7 +23,7 @@ char *CleanEscapeXmlContent(MYSQL *mysqlHandle, xmlNode *textNode)
 	char *trimmedText = NULL;
 
 	check(textNode != NULL && mysqlHandle != NULL, ERROR_STR_INVALIDINPUT);
-	check_debug(textNode->type == XML_TEXT_NODE, ERROR_STR_INVALIDINPUT);
+	check_debug(textNode->type == XML_TEXT_NODE || textNode->type == XML_CDATA_SECTION_NODE, ERROR_STR_INVALIDINPUT);
 
 	textNodeVal = xmlNodeGetContent(textNode);
 	check(textNodeVal != NULL, "Cannot get xml node value.");

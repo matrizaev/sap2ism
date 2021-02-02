@@ -16,9 +16,14 @@
 #define ERROR_STR_INVALIDINPUT	"Function input is invalid."
 
 #define SQL_QUERY_INSERTDOCUMENT	"INSERT INTO `sap_documents`(`doc_id`, `doc_type`, `doc_number`, `doc_author`, `doc_date`, `doc_description`, `doc_dep`) "\
-									"VALUES(\"%s\", %s, \"%s\", \"%s\", \"%s\", \"%s\", \"%s\")"
-#define SQL_QUERY_INSERTVALIDITY	"INSERT INTO `sap_validity`(`doc_id`, `val_id`, `val_type`) VALUES(\"%s\",\"%s\",%d)"
-#define SQL_QUERY_INSERTFILELIST	"INSERT INTO `sap_filelist`(`doc_id`, `file_id`, `file_extension`, `file_description`) VALUES(\"%s\",\"%.*s\",\"%s\",\"%s\")"
+									"VALUES(\"%s\", %s, \"%s\", \"%s\", \"%s\", \"%s\", \"%s\") "\
+									"ON DUPLICATE KEY UPDATE `doc_type`=VALUES(`doc_type`), "\
+									"`doc_number`=VALUES(`doc_number`), `doc_author`=VALUES(`doc_author`), `doc_date`=VALUES(`doc_date`), "\
+									"`doc_description`=VALUES(`doc_description`), `doc_dep`=VALUES(`doc_dep`)"
+#define SQL_QUERY_INSERTVALIDITY	"INSERT INTO `sap_validity`(`doc_id`, `val_id`, `val_type`) VALUES(\"%s\",\"%s\",%d) "\
+									"ON DUPLICATE KEY UPDATE `doc_id`=VALUES(`doc_id`)"
+#define SQL_QUERY_INSERTFILELIST	"INSERT INTO `sap_filelist`(`doc_id`, `file_id`, `file_extension`, `file_description`) VALUES(\"%s\",\"%.*s\",\"%s\",\"%s\") "\
+									"ON DUPLICATE KEY UPDATE `file_extension`=VALUES(`file_extension`), `file_description`=VALUES(`file_description`)"
 #define SQL_QUERY_DELETEDOCUMENT	"DELETE FROM `sap_documents` WHERE `doc_id` = \"%s\""
 
 //val_id - кто меняет
