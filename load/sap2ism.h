@@ -10,7 +10,7 @@
 #define SCHEMA_FILENAME "scheme.xsd"
 #define DATABASE_HOST "91.208.210.38"
 #define DATABASE_USER "root"
-#define DATABASE_PASSWORD "5Gjy$BUe"
+#define DATABASE_PASSWORD "you-will-never-guess"
 #define DATABASE_SCHEMA "sap2ism"
 #define ERROR_DIRECTORY "./errors/"
 #define ERROR_STR_INVALIDINPUT	"Function input is invalid."
