@@ -3,7 +3,7 @@
 	$dbhost = 'localhost';
 	$admin_mode = false;
 	$dbuser = 'root';
-	$dbpass = '5Gjy$BUe';
+	$dbpass = 'you-will-never-guess';
 	$base = 'sap2ism';
 	$link = mysqli_init();
 	mysqli_options($link, MYSQLI_INIT_COMMAND, "SET AUTOCOMMIT=1");
