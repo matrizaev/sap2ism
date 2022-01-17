@@ -6,7 +6,7 @@
 
 //#define DATABASE_HOST			"192.168.97.85"
 //#define DATABASE_USER			"root"
-//#define DATABASE_PASSWORD		"5Gjy$BUe"
+//#define DATABASE_PASSWORD		"you-will-never-guess"
 //#define DATABASE_SCHEMA		"joomla"
 #define SQL_QUERY_LISTCATS		"SELECT `cat_id` FROM `jos_mt_cats` WHERE 1"
 #define SQL_QUERY_LISTCLS		"SELECT `cl`.`cl_id` FROM `jos_mt_cl` AS `cl` LEFT JOIN `jos_mt_cats` AS `cats` ON `cl`.`cat_id` = `cats`.`cat_id` WHERE `cats`.`cat_id` IS NULL"
